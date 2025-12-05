@@ -13,7 +13,7 @@ def main():
     # Find max liberty
     # Find max liberty for Black and White
     max_liberty_B = 0
-    max_liberty_W = 1
+    max_liberty_W = 0
     
     for y in range(game.size):
         for x in range(game.size):
