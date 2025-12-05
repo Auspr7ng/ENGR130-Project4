@@ -1,7 +1,6 @@
 from label import label
 
 def get_liberty(game, x, y):
-    """Find the liberty of the piece at intersection (x, y)"""
     n = game.size
     color = game.board[y][x]
     
