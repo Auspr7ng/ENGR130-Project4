@@ -16,7 +16,7 @@ def read_board(filename):
             
             # Error Check: column size (number of rows) must match board size
             if len(lines) != size:
-                print(f"Error: Column {i} does not match expected board size {size}.")
+                print(f"Error: {len(lines)} does not match expected board size {size}.")
                 return None
 
             board = []
