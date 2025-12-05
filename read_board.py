@@ -10,10 +10,19 @@ def read_board(filename):
                 return None
 
             size = int(first_line)
+            
+            # Read all remaining lines
+            lines = file.readlines()
+            
+            # Error Check: column size (number of rows) must match board size
+            if len(lines) != size:
+                print(f"Error: Column {i} does not match expected board size {size}.")
+                return None
+
             board = []
 
             for i in range(size):
-                row = list(file.readline().strip())
+                row = list(lines[i].strip())
 
                 # Error Check: row length must match board size
                 if len(row) != size:
