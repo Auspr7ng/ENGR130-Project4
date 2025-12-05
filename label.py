@@ -1,5 +1,4 @@
 def label(game, x, y, label_liberty, label_stone, color):
-    """Recursive helper function to label stones and liberties"""
     n = game.size
     
     # Check bounds

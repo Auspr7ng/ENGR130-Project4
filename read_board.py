@@ -1,7 +1,6 @@
 from go_game import GoGame
 
 def read_board(filename):
-    """Read board from file and create a GoGame structure"""
     try:
         with open(filename, 'r') as file:
             first_line = file.readline().strip()
