@@ -8,8 +8,8 @@ The program reads a Go board configuration from an input file, identifies connec
 
 ## Files
 
-- `main.py`: The main entry point of the program. It reads the board, iterates through all stones, calculates their liberties, and prints the maximum liberty found.
-- `read_board.py`: Contains the `read_board` function which reads the board size and layout from a file and returns a `GoGame` object.
+- `main.py`: The main entry point of the program. It reads the board, iterates through all stones, calculates their liberties, prints the maximum liberty found for both Black and White, and predicts the winner based on who has the higher maximum liberty.
+- `read_board.py`: Contains the `read_board` function which reads the board size and layout from a file and returns a `GoGame` object. It also validates that the board dimensions (rows and columns) match the specified size.
 - `go_game.py`: Defines the `GoGame` class which stores the board size and the board grid.
 - `get_liberty.py`: Contains the `get_liberty` function which calculates the number of liberties for a stone at a given position.
 - `label.py`: Contains the `label` function, a recursive helper used by `get_liberty` to identify connected stones and their liberties.
@@ -22,7 +22,7 @@ The program reads a Go board configuration from an input file, identifies connec
     ```bash
     python3 main.py
     ```
-4.  The program will output the maximum liberty found on the board.
+4.  The program will output the maximum liberty found for each player and predict the winner.
 
 ## Input Format
 
@@ -37,15 +37,21 @@ The input file should be formatted as follows:
 
 Input (`inputs/test3`):
 ```
-5
-**1**
-*111*
-**1**
-*****
-*****
+9
+*********
+*********
+***B*****
+*********
+*******W*
+*********
+**WWW****
+*********
+********B
 ```
 
 Output:
 ```
-The biggist liberty in this broad is 8
+Max liberty for Black: 4
+Max liberty for White: 8
+White is more likely to win
 ```
